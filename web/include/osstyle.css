@@ -1,0 +1,96 @@
+A:link {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; COLOR: #ffffff; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #33c; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #ffffff; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #7777ff; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: white; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #aaaacc; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #ffffff; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #33c; TEXT-DECORATION: none
+}
+CODE {
+	BORDER-RIGHT: black 2px solid; PADDING-RIGHT: 8px; BORDER-TOP: black 2px solid; DISPLAY: block; PADDING-LEFT: 8px; FONT-SIZE: 12pt; PADDING-BOTTOM: 4px; MARGIN: 5px 10px; BORDER-LEFT: black 2px solid; COLOR: white; PADDING-TOP: 4px; BORDER-BOTTOM: black 2px solid; BACKGROUND-COLOR: gray
+}
+BODY {
+	FONT-SIZE: 12pt; COLOR: #333366; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #cccccc
+}
+P {
+	FONT-SIZE: 12pt; COLOR: #333366; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #cccccc
+}
+TABLE {
+	FONT-SIZE: 12pt; COLOR: #333366; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #cccccc
+}
+TD {
+	FONT-SIZE: 12pt; COLOR: #333366; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #cccccc
+}
+TR {
+	FONT-SIZE: 12pt; COLOR: #333366; FONT-FAMILY: Georgia,  Times, serif; BACKGROUND-COLOR: #cccccc
+}
+IMG {
+	MARGIN: 4px
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 24pt; FONT-FAMILY: Georgia,  Times, serif
+}
+H2 {
+	BORDER-RIGHT: black thin solid; BORDER-TOP: black thin solid; FONT-WEIGHT: bold; FONT-SIZE: 24pt; BORDER-LEFT: black thin solid; BORDER-BOTTOM: black thin solid; FONT-FAMILY: Times, Bookman, serif
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 24pt; COLOR: #ff0000; FONT-FAMILY: Georgia,  Times, serif
+}
+H6 {
+	FONT-SIZE: 12pt; FONT-FAMILY: Georgia,  Times, serif
+}
+h7 {
+	MARGIN-TOP: -5px; FONT-WEIGHT: bold; FONT-SIZE: 13px; MARGIN-BOTTOM: -9px; MARGIN-LEFT: 20px; COLOR: #000000; FONT-FAMILY: Georgia,  Times, serif
+}
+PRE {
+	FONT-WEIGHT: bold; MARGIN-LEFT: 15px; FONT-STYLE: italic
+}
+.bluetag {
+	COLOR: #ffff00; BACKGROUND-COLOR: #3300ff
+}
+.boarder {
+	BORDER-RIGHT: black 2px solid; PADDING-RIGHT: 4px; BORDER-TOP: black 2px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; MARGIN: 2px 2px 2px 8px; BORDER-LEFT: black 2px solid; COLOR: #ffffff; BORDER-BOTTOM: black 2px solid; BACKGROUND-COLOR: #3333cc; TEXT-ALIGN: justify
+}
+.citer {
+	MARGIN-TOP: -6px; DISPLAY: block; MARGIN-BOTTOM: -9px; MARGIN-LEFT: 15px; COLOR: #000000; BACKGROUND-COLOR: #cccc33
+}
+.cssimage {
+	BACKGROUND: url(images/csstyle2.gif) repeat-y left 50%
+}
+.embold {
+	FONT-WEIGHT: bold; FONT-STYLE: italic
+}
+.gogreen {
+	COLOR: #000000; BACKGROUND-COLOR: #00ff66
+}
+.hilite {
+	BACKGROUND-COLOR: yellow
+}
+.indent {
+	PADDING-RIGHT: 7px; MARGIN-TOP: -9px; PADDING-LEFT: 7px; FONT-WEIGHT: bold; PADDING-BOTTOM: 7px; MARGIN-LEFT: 20px; COLOR: #ffffff; PADDING-TOP: 7px; BACKGROUND-COLOR: #6600cc
+}
+.redlite {
+	COLOR: #ff0000; BACKGROUND-COLOR: #ffff00
+}
+.redfont {
+	COLOR: #ff0000
+}
+.serifbigbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #ffffff; FONT-FAMILY: "Times New Roman", Times, serif
+}
+.striker {
+	FONT-WEIGHT: bolder; TEXT-DECORATION: line-through
+}
+.underbold {
+	FONT-WEIGHT: bolder; TEXT-DECORATION: underline
+}
+.underonly {
+	TEXT-DECORATION: underline
+}
+HR {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}

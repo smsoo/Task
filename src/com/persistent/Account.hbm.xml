@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	 <class name="com.persistent.Account" table="account">
+        <id name="accId" type="java.lang.Integer">
+            <column name="acc_id" />
+            <generator class="native" />
+        </id>
+        <property name="accPassword" type="java.lang.String">
+            <column name="acc_password" length="50" />
+        </property>
+        <property name="accUsername" type="java.lang.String">
+            <column name="acc_username" length="50" />
+        </property>
+        <property name="accType" type="java.lang.Integer">
+            <column name="acc_type" length="1" />
+        </property>
+        <property name="accDeleted" type="java.lang.Integer">
+            <column name="acc_deleted" length="1" />
+        </property>     
+        <many-to-one name="user" class="com.persistent.User" fetch="select">
+            <column name="user_id" />
+        </many-to-one>
+	</class>
+
+</hibernate-mapping>

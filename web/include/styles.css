@@ -1,0 +1,187 @@
+<STYLE>
+
+/* allgemein */
+body,p,td,ul,ol,li,th,nobr,b,i,select,input{font-family:Arial,Univers,Helvetica,sans-serif;font-size:12px;color:#53636c;}
+body 				{background-image:url(images/header_medica.jpg); background-repeat:no-repeat}
+
+a					{color:#011E68}
+b					{font-weight:bold}
+ul					{margin-left:17px;MARGINLEFT:-20px;margin-top:0px;margin-bottom:0px;list-style-image:url(../images/listbox.gif);}
+ol					{margin-left:17px;MARGINLEFT:-20px;margin-top:0px;margin-bottom:0px;}
+p					{margin-bottom:0px}
+
+h1					{color:#7b8393; font-size:16px; margin-bottom:-10px; valign:bottom}
+h2					{color:#C24361; font-size:16px}
+.head				{color:#7b8393; font-size:16px;font-weight:bold}
+
+.fond				{background-color:#ecf2f7; margin-top:25px}
+.fond-cluster		{background-color:#ecf2f7; margin-top:8px}
+.fond-lst			{background-color:#ecf2f7; margin-top:2px}
+.fond-line			{background-color:#7897AB;}
+.fond-weiss-mt		{margin-top:12px}
+.fond-produktStart	{background-color:#EDCAD1; margin-top:8px}
+
+a.list-head			{font-family:Arial,Univers,Helvetica,sans-serif;font-size:12px;color:#53636c;font-weight:bold; text-decoration:none}
+
+.rubrik				{color:#C24361;font-size:11px;font-weight:600}
+.rubrik-u			{margin-top:8px}
+.rubrik-line		{background-color:#FFE7EF}
+.line-db		{background-color:#7E96A7}
+
+/* Pfad bei den Produkten */
+.pfad-txt			{color:#011e68;text-decoration:none;font-size:11px; background-color:#E6F6F5; }
+.pfad-mt			{margin-top:22px; padding-left:7px}
+
+/* global navigation */
+.glob-nav,a.glob-nav			{color:#798ab1; font-size:11px}
+.glob-nav-mt					{margin-top:9px}
+
+/* content Navigation */
+.cnt-line-out		{background-color:#8097A9}
+.cnt-line-in		{background-color:#BFCBD7}
+.cnt-line-bgr		{background-color:#EAF2F4}
+
+/* allgemeiner margin top */
+.mt-pt				{margin-top:22px}
+.mt					{margin-top:25px}
+.mt-sm				{margin-top:8px}
+.mt-no				{margin-top:0px}
+
+/* Headline Ebene 3 */
+.hdl-sm				{
+	color: #B8284B;
+	font-weight: bold;
+	font-size: 12px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	text-decoration: none;
+}
+
+/* Headline Ebene 3 */
+.hdl-sm-blue				{
+	color: #378D12;
+	font-weight: bold;
+	font-size: 12px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	text-decoration: none;
+}
+
+.hdl-sm-line		{background-color:#7e96a7}
+.hdl-sm-bgr			{background-color:#FFE7EF}
+
+/* Headline Ebene 2 */
+.hdl				{color:#B8284B;font-weight:bold; font-size:15px; padding-top:2px; padding-bottom:3px}
+.hdl-line			{background-color:#7F96A8;}
+
+/* Bildunterschrift und Linie */
+.hasmoved-pic-txt			{font-size:11px;color:#7e96a7; vertical-align:bottom; padding-bottom:5px}
+.pic-u-txt			{font-size:11px;color:#7e96a7; padding-top:3px}
+.pic-line			{background-color:#7e96a7;}
+.pic-m				{margin-top:3px;}
+
+/* Tabelle */
+.tb-headline		{font-weight:bold; padding-bottom:4px}
+.tb-head-hi			{color:#ffffff; background-color:#C14263; font-weight:600}
+.tb-txt-hi			{background-color:#fde7ee;}
+.tb-txt-sm			{font-size:11px;color:#7e96a7;}
+.tb-txt				{background-color:#ecf2f7;}
+.tb-head-click			{color:#ffffff;background-color:#B8284B;font-weight:600;margin: 15px;padding: 10px 5px;}
+
+/* Menü */
+a.menue-lnk-hi		{color:#011e68;text-decoration:none;font-size:11px;line-height:12px;font-weight:600}
+a.menue-lnk-lo		{color:#011e68;text-decoration:none;font-size:11px;line-height:12px;}
+.menue-m			{margin-top:5px;margin-bottom:4px}
+.menue1-bgr			{background-color:#B7E9DE}
+
+/* DHTML Menü */
+.dhtml-men			{color:#314A83; font-size:11px; padding-left:16px}
+.menu 				{position:absolute; left:0px; top:0px; z-index:4; visibility:hidden}
+
+/* Finder */
+.fnd-mt				{margin-top:10px}
+
+/* Linke Finder */
+.left-hdl			{color:#52636B;font-size:11px;font-weight:600;margin-top:5px}
+.left-txt			{color:#52636B;font-size:11px}
+.left-line			{background-color:#B8284C}
+
+/* rechte Finder */
+.right-line			{background-color:#7897AC}
+
+/* Content Navi */
+a.cnt				{color:#71829E;text-decoration:none}
+
+
+/* alt */
+.left-line1			{background-color:#5EB3AE}
+.left-bgr1			{background-color:#A1DFD2}
+
+/* Browsertest */
+.browser			{background-color:#f0f0f0}
+
+/* New */
+.fnd-lnk   			{font-size:11px;color:#53636c;}
+.left-ln-red  		{background-color:#B8284C;}
+.right-bg   		{background-color:#C8DEEF;}
+
+
+	
+	.SubMenuBlue {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: bold;
+		color: #59829F;
+		text-decoration: none;
+	}
+	
+	.FormButton {
+		background-color: #E0E0E0 ;
+		BORDER-BOTTOM: 1px #626262 solid;
+		BORDER-LEFT: 1px #626262 solid;
+		BORDER-RIGHT: 1px #626262 solid;
+		BORDER-TOP: 1px #626262 solid;
+		COLOR: #393939;
+		WIDTH: 50px;
+		HEIGHT: 18px;
+		font-family : Arial, Helvetica, sans-serif;
+		background-image: url(bt_bg.gif);
+		font-size : 8pt;
+	}
+	.FormButtonMiddle {
+		background-color: #E0E0E0 ;
+		BORDER-BOTTOM: 1px #626262 solid;
+		BORDER-LEFT: 1px #626262 solid;
+		BORDER-RIGHT: 1px #626262 solid;
+		BORDER-TOP: 1px #626262 solid;
+		COLOR: #393939;
+		WIDTH: 80px;
+		HEIGHT: 18px;
+		font-family : Arial, Helvetica, sans-serif;
+		background-image: url(bt_bg.gif);
+		font-size : 8pt;
+	}
+	
+	.FormButtonLong {
+		background-color: #E0E0E0 ;
+		BORDER-BOTTOM: 1px #626262 solid;
+		BORDER-LEFT: 1px #626262 solid;
+		BORDER-RIGHT: 1px #626262 solid;
+		BORDER-TOP: 1px #626262 solid;
+		COLOR: #393939;
+		WIDTH: 130px;
+		HEIGHT: 18px;
+		font-family : Arial, Helvetica, sans-serif;
+		background-image: url(bt_bg.gif);
+		font-size : 8pt;
+	}
+		
+	.NormalRed {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: normal;
+		color: #FF0000;
+		text-decoration: none;
+	}
+	
+</STYLE>

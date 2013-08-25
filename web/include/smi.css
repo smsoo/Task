@@ -1,0 +1,138 @@
+<style type="text/css">
+
+A.menue-lnk-hi:link {
+	FONT-WEIGHT: 600; FONT-SIZE: 11px; COLOR: #011e68; LINE-HEIGHT: 12px; TEXT-DECORATION: none
+}
+A.menue-lnk-hi:active {
+	FONT-WEIGHT: 600; FONT-SIZE: 11px; COLOR: #011e68; LINE-HEIGHT: 12px; TEXT-DECORATION: none
+}
+A.menue-lnk-hi:visited {
+	FONT-WEIGHT: 600; FONT-SIZE: 11px; COLOR: #011e68; LINE-HEIGHT: 12px; TEXT-DECORATION: none
+}
+A.menue-lnk-lo:link {
+	FONT-SIZE: 11px; COLOR: #011e68; LINE-HEIGHT: 12px; TEXT-DECORATION: none
+}
+A.menue-lnk-lo:active {
+	FONT-SIZE: 11px; COLOR: #011e68; LINE-HEIGHT: 12px; TEXT-DECORATION: none
+}
+A.menue-lnk-lo:visited {
+	FONT-SIZE: 11px; COLOR: #011e68; LINE-HEIGHT: 12px; TEXT-DECORATION: none
+}
+.menue-m {
+	MARGIN-TOP: 5px; MARGIN-BOTTOM: 4px
+}
+.menue-sm {
+	MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px
+}
+.menue1-bgr {
+	BACKGROUND-COLOR: #b7e9de
+}
+.menu {
+	Z-INDEX: 4;
+	LEFT: 0px;
+	VISIBILITY: hidden;
+	POSITION: absolute;
+	TOP: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+.dhtml-men {
+	PADDING-LEFT: 16px; FONT-SIZE: 11px; COLOR: #314a83
+}
+
+
+.text-link {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: normal;
+		color: #011E68;
+		text-decoration: none;
+	}	
+	
+.text-norm {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: normal;
+		color: #000000;
+		text-decoration: none;
+	}	
+	
+.text-bold {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: bold;
+		color: #000000;
+		text-decoration: none;
+	}
+
+.text-link-hd {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: Bold;
+		color: #53636C;
+		text-decoration: underline;
+	}
+.text-link-dt {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: Normal;
+		color: #53636C;
+		text-decoration: underline;
+	}
+
+.text-link-rd {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: Normal;
+		color: #ff0000;
+		text-decoration: underline;
+	}	
+	
+.textw-bold {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: bold;
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+
+.textw {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9pt;
+		font-weight: Normal;
+		color: #FFFFFF;
+		text-decoration: none;
+	}	
+
+table.print {
+		border-style: solid;
+		border-color: #4DA9A4;
+		border-width: 0.03cm
+	}
+	
+.bts {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: 0px; WIDTH: 80px; COLOR: #445071; TEXT-INDENT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 22px; BACKGROUND-COLOR: Transparent; TEXT-ALIGN: right;
+}	
+
+.textfield {
+		BORDER-BOTTOM: 1px RED solid;
+		BORDER-LEFT: 1px RED solid;
+		BORDER-RIGHT: 1px RED solid;
+		BORDER-TOP: 1px RED solid;
+		COLOR: #000000 ;
+		font-family : Arial, Helvetica, sans-serif;
+		font-size : 9pt;
+	}
+	
+	
+.textfieldSEACRH {
+	BORDER-BOTTOM: 1px #5E7180 solid;
+	BORDER-LEFT: 1px #5E7180 solid;
+	BORDER-RIGHT: 1px #5E7180 solid;
+	BORDER-TOP: 1px #5E7180 solid;
+	COLOR: #53636C;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+}
+</style>
+
