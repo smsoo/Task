@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	 <class name="com.persistent.Message" table="message">
+        <id name="messageID" type="java.lang.Integer">
+            <column name="message_id" />
+            <generator class="native" />
+        </id>
+        <property name="message" type="java.lang.String">
+            <column name="message" length="500" />
+        </property>
+        <many-to-one name="responseID" class="com.persistent.Response" fetch="select">
+            <column name="response_id" />
+        </many-to-one>           
+        <many-to-one name="from" class="com.persistent.User" fetch="select">
+            <column name="from" />
+        </many-to-one> 
+        <many-to-one name="to" class="com.persistent.User" fetch="select">
+            <column name="to" />
+        </many-to-one> 
+	</class>
+
+</hibernate-mapping>

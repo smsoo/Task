@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	 <class name="com.persistent.Notification" table="notification">
+        <id name="notificationID" type="java.lang.Integer">
+            <column name="notification_id" />
+            <generator class="native" />
+        </id>
+        <property name="notification" type="java.lang.String">
+            <column name="notification" length="500" />
+        </property>
+        <many-to-one name="responseID" class="com.persistent.Response" fetch="select">
+            <column name="response_id" />
+        </many-to-one>
+        <many-to-one name="recipient" class="com.persistent.User" fetch="select">
+            <column name="recipient_id" />
+        </many-to-one>   
+        <many-to-one name="status" class="com.persistent.Status" fetch="select">
+            <column name="status_id" />
+        </many-to-one>  
+	</class>
+
+</hibernate-mapping>

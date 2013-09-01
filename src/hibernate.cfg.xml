@@ -28,6 +28,10 @@
       <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
       <property name="hibernate.hbm2ddl.auto">update</property>
       <!-- Mapping files -->
+      <mapping resource="com/persistent/Review.hbm.xml"/>
+      <mapping resource="com/persistent/Message.hbm.xml"/>
+      <mapping resource="com/persistent/Notification.hbm.xml"/>
+      <mapping resource="com/persistent/Transaction.hbm.xml"/>
 	  <mapping resource="com/persistent/User.hbm.xml"/>
 	  <mapping resource="com/persistent/Category.hbm.xml"/>
 	  <mapping resource="com/persistent/Response.hbm.xml"/>	
