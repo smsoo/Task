@@ -22,13 +22,15 @@
 
 	var	bPageLoaded=false
 	var	ie=document.all
+	var ie9=document.addeventlistener
 	var	dom=document.getElementById
 
 	var	ns4=document.layers
 	var	today =	new	Date()
 	var	dateNow	 = today.getDate()
 	var	monthNow = today.getMonth()
-	var	yearNow	 = today.getYear()
+	//sim 25/03/2013 - Change from today.getYear() to today.getFullYear for IE9
+	var	yearNow	 = today.getFullYear()
 	var	imgsrc = new Array("cal_drop1.gif","cal_drop2.gif","cal_left1.gif","cal_left2.gif","cal_right1.gif","cal_right2.gif")
 	var	img	= new Array()
 
@@ -37,9 +39,9 @@
     /* hides <select> and <applet> objects (for IE only) */
     function hideElement( elmID, overDiv )
     {
-      if( ie )
+      if( ie || ie9 )
       {
-        for( i = 0; i < document.all.tags( elmID ).length; i++ )
+        for( var i = 0; i < document.all.tags( elmID ).length; i++ )
         {
           obj = document.all.tags( elmID )[i];
           if( !obj || !obj.offsetParent )
@@ -52,7 +54,9 @@
           objTop    = obj.offsetTop;
           objParent = obj.offsetParent;
           
-          while( objParent.tagName.toUpperCase() != "BODY" )
+          //&& objParent.tagName.toUpperCase() != "HTML" added to cater popup that did not show on 
+          //displayFunc="editDoor" in fieldgen.jsp
+          while( objParent.tagName.toUpperCase() != "BODY" && objParent.tagName.toUpperCase() != "HTML" )
           {
             objLeft  += objParent.offsetLeft;
             objTop   += objParent.offsetTop;
@@ -79,9 +83,9 @@
     */
     function showElement( elmID )
     {
-      if( ie )
+      if( ie || ie9)
       {
-        for( i = 0; i < document.all.tags( elmID ).length; i++ )
+        for( var i = 0; i < document.all.tags( elmID ).length; i++ )
         {
           obj = document.all.tags( elmID )[i];
           
@@ -113,7 +117,7 @@
 
 	if (dom)
 	{
-		for	(i=0;i<imgsrc.length;i++)
+		for	(var i=0;i<imgsrc.length;i++)
 		{
 			img[i] = new Image
 			img[i].src = imgDir + imgsrc[i]
@@ -142,20 +146,21 @@
 	var	styleLightBorder="border-style:solid;border-width:1px;border-color:#a0a0a0;"
 
 	function swapImage(srcImg, destImg){
-		if (ie)	{ document.getElementById(srcImg).setAttribute("src",imgDir + destImg) }
+		if (ie || ie9)	{ document.getElementById(srcImg).setAttribute("src",imgDir + destImg) }
 	}
 
 	function init()	{
 		if (!ns4)
 		{
-			if (!ie) { yearNow += 1900	}
+			//sim 25/03/2013 - comment the line below as today.getFullYear should work with other browser - tested on Firefox 19.0.2
+			//if (!ie && !ie9) { yearNow += 1900	}
 
-			crossobj=(dom)?document.getElementById("calendar").style : ie? document.all.calendar : document.calendar
+			crossobj=(dom)?document.getElementById("calendar").style : (ie||ie9)? document.all.calendar : document.calendar; 
 			hideCalendar()
 
-			crossMonthObj=(dom)?document.getElementById("selectMonth").style : ie? document.all.selectMonth	: document.selectMonth
+			crossMonthObj=(dom)?document.getElementById("selectMonth").style : (ie||ie9)? document.all.selectMonth	: document.selectMonth ;
 
-			crossYearObj=(dom)?document.getElementById("selectYear").style : ie? document.all.selectYear : document.selectYear
+			crossYearObj=(dom)?document.getElementById("selectYear").style : (ie||ie9)? document.all.selectYear : document.selectYear ;
 
 			monthConstructed=false;
 			yearConstructed=false;
@@ -212,10 +217,17 @@
 	}
 
 	function closeCalendar() {
-		var	sTmp
+		var	sTmp;
 
 		hideCalendar();
-		ctlToPlaceValue.value =	constructDate(dateSelected,monthSelected,yearSelected)
+		ctlToPlaceValue.value =	constructDate(dateSelected,monthSelected,yearSelected);
+		//added on 09/11/2012 to fire onchange event on the textbox that being assigned the date value  
+		try{
+			ctlToPlaceValue.onchange()
+		}catch(err){
+			
+		}
+				
 	}
 
 	/*** Month Pulldown	***/
@@ -268,9 +280,9 @@
 
 	function popUpMonth() {
 		constructMonth()
-		crossMonthObj.visibility = (dom||ie)? "visible"	: "show"
-		crossMonthObj.left = parseInt(crossobj.left) + 50
-		crossMonthObj.top =	parseInt(crossobj.top) + 26
+		crossMonthObj.visibility = (dom||ie||ie9)? "visible"	: "show";
+		crossMonthObj.left = parseInt(crossobj.left) + 50 +"px";
+		crossMonthObj.top =	parseInt(crossobj.top) + 26 +"px";
 
 		hideElement( 'SELECT', document.getElementById("selectMonth") );
 		hideElement( 'APPLET', document.getElementById("selectMonth") );			
@@ -354,14 +366,14 @@
 		var	leftOffset
 
 		constructYear()
-		crossYearObj.visibility	= (dom||ie)? "visible" : "show"
+		crossYearObj.visibility	= (dom||ie||ie9)? "visible" : "show"
 		leftOffset = parseInt(crossobj.left) + document.getElementById("spanYear").offsetLeft
-		if (ie)
+		if (ie||ie9)
 		{
 			leftOffset += 6
 		}
-		crossYearObj.left =	leftOffset
-		crossYearObj.top = parseInt(crossobj.top) +	26
+		crossYearObj.left =	leftOffset +"px"
+		crossYearObj.top = parseInt(crossobj.top) +	26 +"px"
 	}
 
 	/*** calendar ***/
@@ -499,7 +511,7 @@
 	function popUpCalendar(ctl,	ctl2, format) {
 		var	leftpos=0
 		var	toppos=0
-
+	
 		if (bPageLoaded)
 		{
 			if ( crossobj.visibility ==	"hidden" ) {
@@ -587,22 +599,28 @@
 				odateSelected=dateSelected
 				omonthSelected=monthSelected
 				oyearSelected=yearSelected
-
+			
 				aTag = ctl
-				do {
+				
+				do {	
 					aTag = aTag.offsetParent;
 					leftpos	+= aTag.offsetLeft;
 					toppos += aTag.offsetTop;
-				} while(aTag.tagName!="BODY");
-
-				crossobj.left =	fixedX==-1 ? ctl.offsetLeft	+ leftpos - 180 :	fixedX
-				crossobj.top = fixedY==-1 ?	ctl.offsetTop +	toppos + ctl.offsetHeight +	2 :	fixedY
+				} while(aTag.tagName!="BODY" && aTag.tagName!="HTML");
+				//&& aTag.tagName!="HTML" added to cater popup that did not show on displayFunc="editDoor" in fieldgen.jsp
+				
+			
+				crossobj.left =	fixedX==-1 ? ctl.offsetLeft	+ leftpos - 180 + 'px':	fixedX + 'px'
+				crossobj.top = fixedY==-1 ?	ctl.offsetTop +	toppos + ctl.offsetHeight +	2 + 'px':	fixedY + 'px'
+					
+				
 				constructCalendar (1, monthSelected, yearSelected);
-				crossobj.visibility=(dom||ie)? "visible" : "show"
-
+				crossobj.visibility=(dom||ie||ie9)? "visible" : "show"
+				
+					
 				hideElement( 'SELECT', document.getElementById("calendar") );
 				hideElement( 'APPLET', document.getElementById("calendar") );			
-
+				
 				bShow = true;
 			}
 			else
@@ -628,7 +646,7 @@
 		bShow = false
 	}
 
-	if(ie)
+	if(ie||ie9)
 	{
 		init()
 	}
@@ -636,3 +654,4 @@
 	{
 		window.onload=init
 	}
+	

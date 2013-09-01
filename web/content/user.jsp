@@ -62,29 +62,7 @@
 <br>
 
 
-<iframe id="upload_target" name="upload_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
-<div id="statusDetailDiv" class="divClass">
-	<a name="tabDivLocation"></a>
-	<table border="0" id="divTable" bgcolor="#00A28A" cellspacing="0" cellpadding="5"  >
-	<tr>
-	<td width="100%">
-	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
-	  <tr>
-	  <td id="titleBar" width="100%" style="cursor:move"  onmousedown="dragStart(event,'statusDetailDiv')"><span class="popupTitle" id="frameTitle">Detail</span></td>
-	  <td style="cursor:hand" valign="top"><a href="#" onClick="hideMeStatus('statusDetailDiv');return false"><span class="popupTitle">X</span></a>
-	  </td>
-	  </tr>
-	  <tr>
-	  <td id="statusDetailTd" width="100%" bgcolor="#FFFFFF" style="padding:5px" colspan="2">
-		
-		
-	  </td>
-	  </tr>
-	  </table>  
-	</td>
-	</tr>
-	</table>
-</div>
+<input type="button" value="Post" onclick="location.href='post.action'"/>
 <script language="javascript">
 
 </script>

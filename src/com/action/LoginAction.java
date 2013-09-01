@@ -70,7 +70,7 @@ public class LoginAction extends ActionSupport{
 			}else{
 
 			}
-			JOptionPane.showMessageDialog(null, page);
+			
 			return SUCCESS;
 		}else{
 			page="search";

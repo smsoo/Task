@@ -225,15 +225,19 @@ function dragStop(event) {
 	
 </s:if>
 <s:elseif test='#selectPage=="user"'>
-ABC
 	<s:include value="content/user.jsp"/>
 </s:elseif>
 
 <s:elseif test='#selectPage=="search"'>
-DEF
 	<s:include value="content/search.jsp"/>
 </s:elseif>
 
+<s:elseif test='#selectPage=="post"'>
+	<s:include value="content/post.jsp"/>
+</s:elseif>
+<s:elseif test='#selectPage=="browse"'>
+	<s:include value="content/browse.jsp"/>
+</s:elseif>
 </td></tr>
 </table>
 

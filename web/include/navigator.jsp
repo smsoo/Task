@@ -2,7 +2,7 @@
 <table border="0" cellspacing="0" cellpadding="0" class="navilayout" width="996">
 <tr>
 <s:set name="accSession" value="#session.loginSess"></s:set>
-
+<s:set name="adSession" value="#session.approvalSess"></s:set>
 <s:set name="selectPage" value="page"></s:set>
 <s:set name="currentPage" value="1"></s:set>
 <s:set name="addPage" value="0"></s:set>
@@ -13,19 +13,27 @@
 	 </script>
 </s:if>
 <s:if test="#accSession!=null"> 
-	
-	<s:if test="#accSession.accType==0">
+	<s:if test="#accSession.accType==1">
+		<td <s:if test='#selectPage=="inbox"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
+		<a href ="inbox.action"  onclick="return navigationLoading();"><b>Inbox</b></a></td>
+		
+		<td <s:if test='#selectPage=="adminSetting"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
+		<a href ="setting.action"  onclick="return navigationLoading();"><b>Setting</b></a></td>
+		
+		
+	</s:if>
+	<s:elseif test="#accSession.accType==0">
 		
 				<td <s:if test='#selectPage=="post"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
 				<a href ="post.action"  onclick="return navigationLoading();"><b>Post</b></a></td>
-				<td <s:if test='#selectPage=="jobApproval"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
-				<a href ="viewApprovalJob.action"  onclick="return navigationLoading();"><b>Browse</b></a></td>
+				<td <s:if test='#selectPage=="browse"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
+				<a href ="browse.action"  onclick="return navigationLoading();"><b>Browse</b></a></td>
 				<td <s:if test='#selectPage=="approverevision"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
 				<a href ="viewApprovalRevision.action"  onclick="return navigationLoading();"><b>Test</b></a></td>
 		
 
 		
-	</s:if>
+	</s:elseif>
 </s:if>
 <s:else>
 <td width="70%" <s:if test='#selectPage=="search"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>

@@ -102,7 +102,7 @@ public class FormAction  extends ActionSupport{
 	public String login(){
 	
 		
-		displayFunc = "loginForm";
+		displayFunc = "loginA";
 		
 		if(displayFunc!=null){
 			return "generate";

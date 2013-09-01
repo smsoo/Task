@@ -1,13 +1,12 @@
 package com.dao;
 
-import java.util.Iterator;
 import java.util.List;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import com.persistent.Category;
+import com.persistent.Status;
 
 
 public interface IFormDAO {
-
+	public List<Category> searchAllCategory();
+	public Status searchStatusById(int id);
 }

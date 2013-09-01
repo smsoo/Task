@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<s:if test='displayFunc=="loginForm"'>
+<s:if test='displayFunc=="loginA"'>
 
 <div id="statusDetailTd">
 	<table border="0" id="divTable" bgcolor="#00A28A" cellspacing="0" cellpadding="5" style="margin-left:auto; margin-right:auto;" >
