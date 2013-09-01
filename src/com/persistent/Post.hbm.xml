@@ -8,6 +8,9 @@
             <column name="post_id" />
             <generator class="native" />
         </id>
+        <property name="postType" type="java.lang.String">
+            <column name="post_type" length="1" />
+        </property>
         <property name="postTitle" type="java.lang.String">
             <column name="post_title" length="100" />
         </property>
@@ -29,8 +32,8 @@
         <property name="postPostedDate" type="java.util.Date">
             <column name="post_posted_date"  />
         </property> 
-        <many-to-one name="account" class="com.persistent.Account" fetch="select">
-            <column name="acc_id" />
+        <many-to-one name="user" class="com.persistent.User" fetch="select">
+            <column name="user_id" />
         </many-to-one>
         <property name="postIsDeleted" type="java.lang.Integer">
             <column name="post_is_deleted" length="1" default="0"/>

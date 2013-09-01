@@ -147,6 +147,7 @@ public class PostAction  extends ActionSupport{
 				newPost.setPostIsDeleted(0);
 				newPost.setStatus(stat);
 				newPost.setAccount(acc);
+				newPost.setPostType("T");
 				
 				postDAO.insertPost(newPost);
 			}

@@ -28,10 +28,9 @@
       <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
       <property name="hibernate.hbm2ddl.auto">update</property>
       <!-- Mapping files -->
-	  <mapping resource="com/persistent/Account.hbm.xml"/>
 	  <mapping resource="com/persistent/User.hbm.xml"/>
 	  <mapping resource="com/persistent/Category.hbm.xml"/>
-	
+	  <mapping resource="com/persistent/Response.hbm.xml"/>	
 	  <mapping resource="com/persistent/Post.hbm.xml"/>
 	  <mapping resource="com/persistent/Status.hbm.xml"/>
 </session-factory>

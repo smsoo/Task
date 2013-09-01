@@ -3,13 +3,20 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.persistent.User" table="user">
-        <id name="userId" type="java.lang.Integer">
+	 <class name="com.persistent.User" table="user">
+        <id name="userID" type="java.lang.Integer">
             <column name="user_id" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
-        <property name="userName" type="java.lang.String">
-            <column name="user_name" length="100" />
+        <property name="Password" type="java.lang.String">
+            <column name="password" length="50" />
         </property>
-    </class>
+        <property name="Username" type="java.lang.String">
+            <column name="username" length="50" />
+        </property>
+        <property name="accDeleted" type="java.lang.Integer">
+            <column name="acc_deleted" length="1" />
+        </property>             
+	</class>
+
 </hibernate-mapping>

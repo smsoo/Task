@@ -5,6 +5,7 @@ import java.util.Date;
 @SuppressWarnings("serial")
 public class Post implements java.io.Serializable{
 	private int postId;
+	private String postType;
 	private String postTitle;
 	private String postDesc;
 	private Category category;
@@ -12,7 +13,7 @@ public class Post implements java.io.Serializable{
 	private int postFee;
 	private Date postEndDate;
 	private Date postPostedDate;
-	private Account account;
+	private User user;
 	private int postIsDeleted;
 	private Status status;
 
@@ -20,9 +21,9 @@ public class Post implements java.io.Serializable{
 	public Post(){
 		
 	}
-	public Post(int postId, String postTitle, String postDesc, Category category,
+	public Post(int postId, String type, String postTitle, String postDesc, Category category,
 			String postLocation, int postFee, Date postEndDate, Date postPostedDate, 
-			Account account, int postIsDeleted, Status status) {
+			User user, int postIsDeleted, Status status) {
 		
 		this.postId = postId;
 		this.postTitle = postTitle;
@@ -34,7 +35,7 @@ public class Post implements java.io.Serializable{
 		this.postPostedDate = postPostedDate;
 		this.postIsDeleted = postIsDeleted;
 		this.status = status;
-		
+		this.postType = type;
 
 	}
 
@@ -104,14 +105,6 @@ public class Post implements java.io.Serializable{
 		this.postPostedDate = postPostedDate;
 	}
 
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-	
 	public int getPostIsDeleted() {
 		return postIsDeleted;
 	}
@@ -124,6 +117,18 @@ public class Post implements java.io.Serializable{
 	}
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+	public String getPostType() {
+		return postType;
+	}
+	public void setPostType(String postType) {
+		this.postType = postType;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 
