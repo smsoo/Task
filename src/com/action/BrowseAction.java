@@ -6,10 +6,6 @@ import java.util.Map;
 import java.util.List;
 
 import com.persistent.*;
-import com.service.IAccountService;
-import com.service.IFormService;
-import com.service.impl.AccountService;
-import com.service.impl.FormService;
 
 import com.util.*;
 
@@ -37,21 +33,21 @@ public class BrowseAction  extends ActionSupport{
 	//private IFormService formService = new FormService();
 	private IPostDAO postDAO = new PostDAO();
 	private IFormDAO formDAO = new FormDAO();
-	//private IAccountService accountService = new AccountService();
+	//private IUserService userService = new UserService();
 	private String page;
 	private String section;
 	private String displayFunc;
-	private Account account;
+	private User user;
 	private String message;
 	private List<Post> posts;
 
 	
 	
-	public Account getAccount() {
-		return account;
+	public User getUser() {
+		return user;
 	}
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public String getMessage() {
 		return message;

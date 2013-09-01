@@ -6,10 +6,7 @@ import java.util.Map;
 import java.util.List;
 
 import com.persistent.*;
-import com.service.IAccountService;
-import com.service.IFormService;
-import com.service.impl.AccountService;
-import com.service.impl.FormService;
+
 
 import com.util.*;
 
@@ -23,10 +20,6 @@ import com.dao.impl.PostDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.interceptor.ServletRequestAware;
-import org.apache.struts2.interceptor.SessionAware;
-
 
 
 
@@ -37,11 +30,11 @@ public class PostAction  extends ActionSupport{
 	//private IFormService formService = new FormService();
 	private IPostDAO postDAO = new PostDAO();
 	private IFormDAO formDAO = new FormDAO();
-	//private IAccountService accountService = new AccountService();
+	//private IUserService userService = new UserService();
 	private String page;
 	private String section;
 	private String displayFunc;
-	private Account account;
+	private User user;
 	private String message;
 	private List<Category> categories;
 	private List<Post> posts;
@@ -49,11 +42,11 @@ public class PostAction  extends ActionSupport{
 	private String postEndDate;
 	
 	
-	public Account getAccount() {
-		return account;
+	public User getUser() {
+		return user;
 	}
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public String getMessage() {
 		return message;
@@ -128,11 +121,11 @@ public class PostAction  extends ActionSupport{
 	public String submitPost(){
 		
 		Map session = ActionContext.getContext().getSession();
-		Account acc=(Account)session.get("loginSess");
+		User usr=(User)session.get("loginSess");
 		//try{
 			
 		
-			if(acc!=null){
+			if(usr!=null){
 				DateUtil du = new DateUtil();
 				Post newPost = new Post();
 				Status stat = formDAO.searchStatusById(1);
@@ -146,7 +139,7 @@ public class PostAction  extends ActionSupport{
 				newPost.setPostPostedDate(du.getTimeStamp());
 				newPost.setPostIsDeleted(0);
 				newPost.setStatus(stat);
-				newPost.setAccount(acc);
+				newPost.setUser(usr);
 				newPost.setPostType("T");
 				
 				postDAO.insertPost(newPost);

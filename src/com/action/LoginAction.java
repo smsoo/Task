@@ -3,17 +3,17 @@ package com.action;
 
 import java.util.Map;
 import javax.swing.JOptionPane;
-import com.persistent.Account;
-import com.service.IAccountService;
-import com.service.impl.AccountService;
+import com.persistent.User;
 
+import com.dao.IUserDAO;
+import com.dao.impl.UserDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport{
 	public static final long serialVersionUID = 1L;
-	private IAccountService accountService= new AccountService();
-	private Account account;
+	private IUserDAO userDAO= new UserDAO();
+	private User user;
 	private String page;
 	private String displayFunc;
 	private String message;
@@ -45,31 +45,27 @@ public class LoginAction extends ActionSupport{
 	}
 
 	public String execute() throws Exception{
-		if(account==null){
+		if(user==null){
 			addActionError("Please enter your username and password!");
 			return ERROR;
 		}
 		
-		String tempUsername=account.getAccUsername();
-		String tempPassword=account.getAccPassword();
+		String tempUsername=user.getUsername();
+		String tempPassword=user.getPassword();
 
-		account=new Account();
-		account.setAccUsername(tempUsername);
-		account.setAccPassword(tempPassword);
-		account=accountService.searchAccountByUserPass(account);
+		user=new User();
+		user.setUsername(tempUsername);
+		user.setPassword(tempPassword);
+		user=userDAO.searchUserByUserPass(user);
 
 		
 		Map session = ActionContext.getContext().getSession();
-		if(account!=null){
+		if(user!=null){
 
 			message = "Welcome User!";
 			page = "user";
-			session.put("loginSess",account);
-			if(account.getAccType()==1){
-				return "admin";
-			}else{
-
-			}
+			session.put("loginSess",user);
+			
 			
 			return SUCCESS;
 		}else{
@@ -80,9 +76,9 @@ public class LoginAction extends ActionSupport{
 	}
 	public String verifyUserPassword() throws Exception{
 		Map session = ActionContext.getContext().getSession();
-		Account acc=(Account)session.get("loginSess");
-		if(acc!=null){
-			if(account!=null && account.getAccUsername()!=null && account.getAccPassword()!=null && acc.getAccUsername().trim().equals(account.getAccUsername().trim()) && acc.getAccPassword().trim().equals(account.getAccPassword().trim())){
+		User usr=(User)session.get("loginSess");
+		if(usr!=null){
+			if(user!=null && user.getUsername()!=null && user.getPassword()!=null && usr.getUsername().trim().equals(usr.getUsername().trim()) && usr.getPassword().trim().equals(user.getPassword().trim())){
 				message="success";
 				return SUCCESS;
 			}else{
@@ -100,12 +96,12 @@ public class LoginAction extends ActionSupport{
 		session.remove("approvalSess");
 		return SUCCESS;
 	}
-	public Account getAccount() {
-		return account;
+	public User getUser() {
+		return user;
 	}
 
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setUser(User user) {
+		this.user = user;
 	}
 }
 

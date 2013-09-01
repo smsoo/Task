@@ -16,12 +16,6 @@ import java.util.Iterator;
 import java.util.Properties;
 
 import com.persistent.*;
-import com.service.IAccountService;
-import com.service.IAdminService;
-import com.service.IFormService;
-import com.service.impl.AccountService;
-import com.service.impl.AdminService;
-import com.service.impl.FormService;
 
 import com.util.*;
 
@@ -42,21 +36,19 @@ import org.apache.struts2.interceptor.SessionAware;
 public class FormAction  extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private static final int BUFFER_SIZE = 16 * 1024 ;
-	private IAdminService adminService = new AdminService();
-	private IFormService formService = new FormService();
-	private IAccountService accountService = new AccountService();
+
 	private String page;
 	private String section;
 	private String displayFunc;
 
-	private Account account;
+	private User user;
 	private String message;
 	
-	public Account getAccount() {
-		return account;
+	public User getUser() {
+		return user;
 	}
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public String getMessage() {
 		return message;
@@ -112,9 +104,9 @@ public class FormAction  extends ActionSupport{
 	}
 	public String verifyUserPassword() throws Exception{
 		Map session = ActionContext.getContext().getSession();
-		Account acc=(Account)session.get("loginSess");
-		if(acc!=null){
-			if(account!=null && account.getAccUsername()!=null && account.getAccPassword()!=null && acc.getAccUsername().trim().equals(account.getAccUsername().trim()) && acc.getAccPassword().trim().equals(account.getAccPassword().trim())){
+		User usr=(User)session.get("loginSess");
+		if(usr!=null){
+			if(user!=null && user.getUsername()!=null && user.getPassword()!=null && usr.getUsername().trim().equals(user.getUsername().trim()) && usr.getPassword().trim().equals(user.getPassword().trim())){
 				message="success";
 			}else{
 				message="fail";
@@ -126,32 +118,5 @@ public class FormAction  extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	private static void copy(File src, File dst)  {
-        try  {
-           InputStream in = null ;
-           OutputStream out = null ;
-            try  {                
-               in = new BufferedInputStream( new FileInputStream(src), BUFFER_SIZE);
-               out = new BufferedOutputStream( new FileOutputStream(dst), BUFFER_SIZE);
-                byte [] buffer = new byte [BUFFER_SIZE];
-                while (in.read(buffer) > 0 )  {
-                   out.write(buffer);
-               } 
-            } finally  {
-                if ( null != in)  {
-                   in.close();
-               } 
-                 if ( null != out)  {
-                   out.close();
-               } 
-           } 
-        } catch (Exception e)  {
-        	System.out.println("Error upload file "+e);
-           e.printStackTrace();
-       } 
-   } 
-	private static String getExtention(String fileName)  {
-        int pos = fileName.lastIndexOf( "." );
-        return fileName.substring(pos);
-    } 
+
 }
