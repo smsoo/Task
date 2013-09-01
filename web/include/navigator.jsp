@@ -13,27 +13,14 @@
 	 </script>
 </s:if>
 <s:if test="#accSession!=null"> 
-	<s:if test="#accSession.accType==1">
-		<td <s:if test='#selectPage=="inbox"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
-		<a href ="inbox.action"  onclick="return navigationLoading();"><b>Inbox</b></a></td>
+		<td <s:if test='#selectPage=="dashboard"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
+		<a href ="loadDashboard.action"  onclick="return navigationLoading();"><b>Dashboard</b></a></td>	
+		<td <s:if test='#selectPage=="post"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
+		<a href ="post.action"  onclick="return navigationLoading();"><b>Post</b></a></td>
+		<td <s:if test='#selectPage=="browse"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
+		<a href ="browse.action"  onclick="return navigationLoading();"><b>Browse</b></a></td>
 		
-		<td <s:if test='#selectPage=="adminSetting"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
-		<a href ="setting.action"  onclick="return navigationLoading();"><b>Setting</b></a></td>
 		
-		
-	</s:if>
-	<s:elseif test="#accSession.accType==0">
-		
-				<td <s:if test='#selectPage=="post"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
-				<a href ="post.action"  onclick="return navigationLoading();"><b>Post</b></a></td>
-				<td <s:if test='#selectPage=="browse"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
-				<a href ="browse.action"  onclick="return navigationLoading();"><b>Browse</b></a></td>
-				<td <s:if test='#selectPage=="approverevision"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>
-				<a href ="viewApprovalRevision.action"  onclick="return navigationLoading();"><b>Test</b></a></td>
-		
-
-		
-	</s:elseif>
 </s:if>
 <s:else>
 <td width="70%" <s:if test='#selectPage=="search"'>class="selectednavi" <s:set name="addPage" value="1"></s:set></s:if><s:elseif test="#addPage==0"><s:set name="currentPage" value="#currentPage+1"></s:set></s:elseif>>

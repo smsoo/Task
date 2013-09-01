@@ -102,6 +102,12 @@ public class FormAction  extends ActionSupport{
 		page="search";
 		return SUCCESS;
 	}
+	public String loadDashboard(){
+	
+	
+		page="dashboard";
+		return SUCCESS;
+	}
 	public String verifyUserPassword() throws Exception{
 		Map session = ActionContext.getContext().getSession();
 		User usr=(User)session.get("loginSess");

@@ -21,8 +21,8 @@
 				<s:fielderror/>
 				</td>
 			</tr>
-				<s:textfield name="account.accUsername" id="account.accUsername" label="Username" cssClass="textfield" />
-				<s:password name="account.accPassword" id="account.accPassword" label="Password" cssClass="textfield"/>
+				<s:textfield name="user.Username" id="user.Username" label="Username" cssClass="textfield" />
+				<s:password name="user.Password" id="user.Password" label="Password" cssClass="textfield"/>
 				<s:submit value="Login" align="center"/>
 		</table>
 		</s:form>

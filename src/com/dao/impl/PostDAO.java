@@ -55,7 +55,7 @@ public class PostDAO implements IPostDAO{
 	}
 	public List<Post> searchAllActivePost(){
 		Session session =BaseDAO.getSession();
-		String queryString ="from Post po where po.status.statusId =:id";
+		String queryString ="from Post po inner join fetch po.status stat where stat.statusId =:id";
 		Query query = session.createQuery(queryString);
 		query.setInteger("id", 1);
 		List<Post> post=null;

@@ -58,20 +58,20 @@ public class UserDAO implements IUserDAO{
 		return acc;
 	}
 	
-	public User searchUserByUserPass(User acc){
+	public User searchUserByUserPass(User usr){
 		Session session =BaseDAO.getSession();
-		String queryString ="from User ussr where usr.Username= :username and usr.Password= :password";
+		String queryString ="from User usr where usr.Username= :username and usr.Password= :password and usr.accDeleted=0";
 		Query query = session.createQuery(queryString);
-		query.setString("username",acc.getUsername());
-		query.setString("password",acc.getPassword());
+		query.setString("username",usr.getUsername());
+		query.setString("password",usr.getPassword());
 		List result = query.list();
-		User act=null;
+		User user=null;
 		if(result.size()!=0){
-			act=(User)query.uniqueResult();
+			user=(User)query.uniqueResult();
 		}
 		session.close();
-		if(act!=null){
-			return act;
+		if(user!=null){
+			return user;
 		}
 		return null;
 	}

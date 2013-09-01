@@ -219,12 +219,10 @@ function dragStop(event) {
 
 <tr><td width="1000px">
 <s:if test="#selectPage==null">
-	<s:if test="accSession.accType==1">
-		<s:include value="content/inbox.jsp"/>
-	</s:if>
+	<s:include value="content/search.jsp"/>
 	
 </s:if>
-<s:elseif test='#selectPage=="user"'>
+<s:elseif test='#selectPage=="dashboard"'>
 	<s:include value="content/user.jsp"/>
 </s:elseif>
 

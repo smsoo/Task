@@ -48,6 +48,10 @@
 	 		<result name="success">/index.jsp</result>
 	 		<result name="error">/index.jsp</result>
 	 	</action>
+	 	<action name="loadDashboard" method="loadDashboard" class="com.action.FormAction">
+	 		<result name="success">/index.jsp</result>
+	 		<result name="error">/index.jsp</result>
+	 	</action>
 	 	<action name="logoutAccount" method="logoutProcess" class="com.action.LoginAction">
 	 		<result name="success">/index.jsp</result>
 	 	</action>

@@ -18,6 +18,14 @@ public class LoginAction extends ActionSupport{
 	private String displayFunc;
 	private String message;
 	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 	public String getMessage() {
 		return message;
 	}
@@ -52,18 +60,19 @@ public class LoginAction extends ActionSupport{
 		
 		String tempUsername=user.getUsername();
 		String tempPassword=user.getPassword();
-
+	
 		user=new User();
 		user.setUsername(tempUsername);
 		user.setPassword(tempPassword);
 		user=userDAO.searchUserByUserPass(user);
+	
 
 		
 		Map session = ActionContext.getContext().getSession();
 		if(user!=null){
 
 			message = "Welcome User!";
-			page = "user";
+			page = "dashboard";
 			session.put("loginSess",user);
 			
 			
@@ -96,12 +105,6 @@ public class LoginAction extends ActionSupport{
 		session.remove("approvalSess");
 		return SUCCESS;
 	}
-	public User getUser() {
-		return user;
-	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
 }
 

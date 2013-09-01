@@ -14,11 +14,11 @@
         <many-to-one name="responseID" class="com.persistent.Response" fetch="select">
             <column name="response_id" />
         </many-to-one>           
-        <many-to-one name="from" class="com.persistent.User" fetch="select">
-            <column name="from" />
+        <many-to-one name="fromUser" class="com.persistent.User" fetch="select">
+            <column name="from_user" />
         </many-to-one> 
-        <many-to-one name="to" class="com.persistent.User" fetch="select">
-            <column name="to" />
+        <many-to-one name="toUser" class="com.persistent.User" fetch="select">
+            <column name="to_user" />
         </many-to-one> 
 	</class>
 

@@ -59,10 +59,10 @@
 	<tr><td><%=request.getAttribute("message") %></td></tr>
 	
 </table>
-<br>
+<br/><br/>
 
 
-<input type="button" value="Post" onclick="location.href='post.action'"/>
+<center><input type="button" value="Post" onclick="location.href='post.action'"/>  <input type="button" value="Browse" onclick="location.href='browse.action'"/></center>
 <script language="javascript">
 
 </script>

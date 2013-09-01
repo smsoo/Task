@@ -5,8 +5,8 @@ public class Message implements java.io.Serializable{
 	private int messageID;
 	private String message;
 	private Response responseID;
-	private User from;
-	private User to;
+	private User fromUser;
+	private User toUser;
 	
 	
 	public Message(){
@@ -14,12 +14,12 @@ public class Message implements java.io.Serializable{
 	}
 
 
-	public Message(int messageID, String message, Response responseID, User from, User to) {
+	public Message(int messageID, String message, Response responseID, User fromUser, User toUser) {
 		this.messageID = messageID;
 		this.message = message;
 		this.responseID = responseID;
-		this.from = from;
-		this.to = to;
+		this.fromUser = fromUser;
+		this.toUser = toUser;
 	}
 
 
@@ -53,23 +53,23 @@ public class Message implements java.io.Serializable{
 	}
 
 
-	public User getFrom() {
-		return from;
+	public User getFromUser() {
+		return fromUser;
 	}
 
 
-	public void setFrom(User from) {
-		this.from = from;
+	public void setFromUser(User fromUser) {
+		this.fromUser = fromUser;
 	}
 
 
-	public User getTo() {
-		return to;
+	public User getToUser() {
+		return toUser;
 	}
 
 
-	public void setTo(User to) {
-		this.to = to;
+	public void setToUser(User toUser) {
+		this.toUser = toUser;
 	}
 
 
